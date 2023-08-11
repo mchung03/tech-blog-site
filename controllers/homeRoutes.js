@@ -16,6 +16,7 @@ router.get('/', async(req, res) => {
         const blogs = blogData.map((blog) => blog.get({ plain: true}));
 
         res.render('homepage', {
+            username: req.session.username,
             blogs,
             logged_in: req.session.logged_in
         })
@@ -60,6 +61,7 @@ router.get('/profile', withAuth, async (req, res) => {
         logged_in: true
       });
     } catch (err) {
+        console.log(err)
       res.status(500).json(err);
     }
   });
