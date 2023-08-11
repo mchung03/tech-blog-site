@@ -1,21 +1,12 @@
-<div class="card" style="width: 18rem;">
+{{#each blogs as |blog|}}
+<div class="card mb-4" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{blog.title}}</h5>
-    <p class="card-text">{{blog.date_created}}</p>
-    <a href="#" class="btn btn-primary">See Content</a>
+    <p class="card-text">{{format_date blog.date_created}}</p>
+    <p>
+      {{truncate blog.content 80}}
+    </p>
+    <a href="#" class="btn btn-primary">Read More</a>
   </div>
-</div>
-
-{{#each blogs as |blog|}}
-<div class="row mb-4 blog">
-    <div class="col-md-5">
-        <h2><a href="/blog/{{blog.id}}">{{blog.title}}</a></h2>
-        <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
-    </div>
-    <div class="col md-7">
-        <p>
-            {{blog.content}}
-        </p>
-    </div>
 </div>
 {{/each}}

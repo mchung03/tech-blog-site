@@ -36,16 +36,3 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 module.exports = router;
-
-
-
-// create route for blog
-/* --> 
-
-Blog.create({
-    title: req.body.title,
-    content: req.body.content,
-    user_id: req.session.user.id
-})
-
-*/

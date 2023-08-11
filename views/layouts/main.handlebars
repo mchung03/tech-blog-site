@@ -16,15 +16,15 @@
             <li class="nav-item">
               <a class="nav-link" id="profile" href="/profile">Profile</a>
             </li>
-            {{#if logged_out}}
-            <li class="nav-item">
-              <a class="nav-link" id="login" href="/login">Login</a>
-            </li>
-            {{else}}
+            {{!-- {{#if logged_in}}
             <li class="nav-item">
               <a class="nav-link" id="logout" href="/logout">Logout</a>
             </li>
-            {{/if}}
+            {{else}} --}}
+            <li class="nav-item">
+              <a class="nav-link" id="login" href="/login">Login</a>
+            </li>
+            {{!-- {{/if}} --}}
         </nav>
     </header>
     <main>
